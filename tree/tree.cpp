@@ -29,7 +29,7 @@ void Tree::create_tree(char postfix_expr[]) {
 
         if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
             if (top < 1) {
-                cout << "Error: invalid postfix expression" << endl;
+                cout << "Error: invalid postfix expression" << "\n";
                 return;
             }
             Node* right_node = node_stack[top];
@@ -50,7 +50,7 @@ void Tree::create_tree(char postfix_expr[]) {
     }
 
     if (top != 0) {
-        cout << "Error: invalid postfix expression" << endl;
+        cout << "Error: invalid postfix expression" << "\n";
         return;
     }
 
@@ -105,43 +105,43 @@ bool Tree::inorder_search_helper(Node* node, char target) {
 
 void Tree::infix() {
     if (root == NULL) {
-        cout << "Tree is empty" << endl;
+        cout << "Tree is empty" << "\n";
         return;
     }
     cout << "Infix: ";
     infix_helper(root);
-    cout << endl;
+    cout << "\n";
 }
 
 void Tree::prefix() {
     if (root == NULL) {
-        cout << "Tree is empty" << endl;
+        cout << "Tree is empty" << "\n";
         return;
     }
     cout << "Prefix: ";
     prefix_helper(root);
-    cout << endl;
+    cout << "\n";
 }
 
 void Tree::postfix() {
     if (root == NULL) {
-        cout << "Tree is empty" << endl;
+        cout << "Tree is empty" << "\n";
         return;
     }
     cout << "Postfix: ";
     postfix_helper(root);
-    cout << endl;
+    cout << "\n";
 }
 
 void Tree::inorder_search(char target) {
     if (root == NULL) {
-        cout << "Tree is empty, cannot search" << endl;
+        cout << "Tree is empty, cannot search" << "\n";
         return;
     }
     bool found = inorder_search_helper(root, target);
     if (found) {
-        cout << target << " found in tree" << endl;
+        cout << target << " found in tree" << "\n";
     } else {
-        cout << target << " not found in tree" << endl;
+        cout << target << " not found in tree" << "\n";
     }
 }

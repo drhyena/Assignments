@@ -9,7 +9,7 @@ Stack::Stack(int s) {
 
 void Stack::push(int value) {
     if (top == size - 1) {
-        cout << "Overflow! Stack is full, cannot push " << value << endl;
+        cout << "Overflow! Stack is full, cannot push " << value << "\n";
         return;
     }
     top = top + 1;
@@ -18,29 +18,29 @@ void Stack::push(int value) {
 
 void Stack::pop() {
     if (top == -1) {
-        cout << "Underflow! Stack is empty, cannot pop" << endl;
+        cout << "Underflow! Stack is empty, cannot pop" << "\n";
         return;
     }
-    cout << "Popped: " << arr[top] << endl;
+    cout << "Popped: " << arr[top] << "\n";
     top = top - 1;
 }
 
 void Stack::peek() {
     if (top == -1) {
-        cout << "Underflow! Stack is empty, cannot peek" << endl;
+        cout << "Underflow! Stack is empty, cannot peek" << "\n";
         return;
     }
-    cout << "Top element is: " << arr[top] << endl;
+    cout << "Top element is: " << arr[top] << "\n";
 }
 
 void Stack::print_stack() {
     if (top == -1) {
-        cout << "Stack is empty" << endl;
+        cout << "Stack is empty" << "\n";
         return;
     }
     cout << "Stack: ";
     for (int i = top; i >= 0; i--) {
         cout << arr[i] << " ";
     }
-    cout << endl;
+    cout << "\n";
 }

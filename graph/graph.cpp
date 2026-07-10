@@ -16,17 +16,17 @@ Graph::Graph(int max_n) {
 
 void Graph::insert_node() {
     if (num_nodes == max_nodes) {
-        cout << "Overflow! Cannot insert more nodes" << endl;
+        cout << "Overflow! Cannot insert more nodes" << "\n";
         return;
     }
     exists[num_nodes] = true;
-    cout << "Inserted node " << num_nodes << endl;
+    cout << "Inserted node " << num_nodes << "\n";
     num_nodes++;
 }
 
 void Graph::insert_edge(int u, int v) {
     if (u < 0 || u >= max_nodes || v < 0 || v >= max_nodes || !exists[u] || !exists[v]) {
-        cout << "Error: invalid nodes, cannot insert edge" << endl;
+        cout << "Error: invalid nodes, cannot insert edge" << "\n";
         return;
     }
     adj[u][v] = 1;
@@ -35,7 +35,7 @@ void Graph::insert_edge(int u, int v) {
 
 void Graph::delete_node(int value) {
     if (value < 0 || value >= max_nodes || !exists[value]) {
-        cout << "Underflow! Node " << value << " does not exist, cannot delete" << endl;
+        cout << "Underflow! Node " << value << " does not exist, cannot delete" << "\n";
         return;
     }
     exists[value] = false;
@@ -43,7 +43,7 @@ void Graph::delete_node(int value) {
         adj[value][i] = 0;
         adj[i][value] = 0;
     }
-    cout << "Deleted node " << value << endl;
+    cout << "Deleted node " << value << "\n";
 }
 
 void Graph::dfs_helper(int node) {
@@ -58,7 +58,7 @@ void Graph::dfs_helper(int node) {
 
 void Graph::dfs_search(int start) {
     if (start < 0 || start >= max_nodes || !exists[start]) {
-        cout << "Error: node " << start << " does not exist" << endl;
+        cout << "Error: node " << start << " does not exist" << "\n";
         return;
     }
     for (int i = 0; i < max_nodes; i++) {
@@ -66,12 +66,12 @@ void Graph::dfs_search(int start) {
     }
     cout << "DFS from node " << start << ": ";
     dfs_helper(start);
-    cout << endl;
+    cout << "\n";
 }
 
 void Graph::bfs_search(int start) {
     if (start < 0 || start >= max_nodes || !exists[start]) {
-        cout << "Error: node " << start << " does not exist" << endl;
+        cout << "Error: node " << start << " does not exist" << "\n";
         return;
     }
     bool visited_bfs[100];
@@ -100,11 +100,11 @@ void Graph::bfs_search(int start) {
             }
         }
     }
-    cout << endl;
+    cout << "\n";
 }
 
 void Graph::print_graph() {
-    cout << "Graph edges:" << endl;
+    cout << "Graph edges:" << "\n";
     for (int i = 0; i < max_nodes; i++) {
         if (!exists[i]) {
             continue;
@@ -115,6 +115,6 @@ void Graph::print_graph() {
                 cout << j << " ";
             }
         }
-        cout << endl;
+        cout << "\n";
     }
 }

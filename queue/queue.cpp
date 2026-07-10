@@ -10,7 +10,7 @@ Queue::Queue(int s) {
 
 void Queue::enqueue(int value) {
     if (rear == size - 1) {
-        cout << "Overflow! Queue is full, cannot enqueue " << value << endl;
+        cout << "Overflow! Queue is full, cannot enqueue " << value << "\n";
         return;
     }
     if (front == -1) {
@@ -22,29 +22,29 @@ void Queue::enqueue(int value) {
 
 void Queue::dequeue() {
     if (front == -1 || front > rear) {
-        cout << "Underflow! Queue is empty, cannot dequeue" << endl;
+        cout << "Underflow! Queue is empty, cannot dequeue" << "\n";
         return;
     }
-    cout << "Dequeued: " << arr[front] << endl;
+    cout << "Dequeued: " << arr[front] << "\n";
     front = front + 1;
 }
 
 void Queue::peek_front() {
     if (front == -1 || front > rear) {
-        cout << "Underflow! Queue is empty, cannot peek" << endl;
+        cout << "Underflow! Queue is empty, cannot peek" << "\n";
         return;
     }
-    cout << "Front element is: " << arr[front] << endl;
+    cout << "Front element is: " << arr[front] << "\n";
 }
 
 void Queue::print_queue() {
     if (front == -1 || front > rear) {
-        cout << "Queue is empty" << endl;
+        cout << "Queue is empty" << "\n";
         return;
     }
     cout << "Queue: ";
     for (int i = front; i <= rear; i++) {
         cout << arr[i] << " ";
     }
-    cout << endl;
+    cout << "\n";
 }
