@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    Tree t;
+    Tree<int> t;
 
     char postfix_expr[] = "AB+C*";
     t.create_tree(postfix_expr);

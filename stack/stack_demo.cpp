@@ -1,13 +1,15 @@
 #include <iostream>
 #include "stack.h"
+
 using namespace std;
 
 int main() {
-    Stack s(5);
+    Stack<int> s(5);
 
     s.push(10);
     s.push(20);
     s.push(30);
+    s=s+1001;
     s.print_stack();
 
     s.peek();

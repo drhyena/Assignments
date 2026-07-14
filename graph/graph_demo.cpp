@@ -1,9 +1,9 @@
 #include <iostream>
-#include "graph.h"
+#include "Graph.h"
 using namespace std;
 
 int main() {
-    Graph g(6);
+    Graph<int> g(6);
 
     g.insert_node();
     g.insert_node();

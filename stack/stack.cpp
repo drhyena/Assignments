@@ -2,12 +2,13 @@
 #include "stack.h"
 using namespace std;
 
-Stack::Stack(int s) {
+
+Stack::Stack(T s) {
     size = s;
     top = -1;
 }
 
-void Stack::push(int value) {
+void Stack::push(T value) {
     if (top == size - 1) {
         cout << "Overflow! Stack is full, cannot push " << value << "\n";
         return;
@@ -32,6 +33,23 @@ void Stack::peek() {
     }
     cout << "Top element is: " << arr[top] << "\n";
 }
+
+Stack Stack::operator+(T n) 
+    {	
+    	Stack temp = *this;
+    	temp.push(n);
+    	return temp;
+        
+    }
+    
+Stack Stack::operator-(T n) 
+    {	
+    	Stack temp = *this;
+    	temp.pop(n);
+    	return temp;
+        
+    }
+
 
 void Stack::print_stack() {
     if (top == -1) {

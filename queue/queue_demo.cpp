@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    Queue q(5);
+    Queue<int> q(5);
 
     q.enqueue(10);
     q.enqueue(20);
